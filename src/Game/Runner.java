@@ -1,6 +1,7 @@
 package Game;
 
 import People.Person;
+import Rooms.NewRoom;
 import Rooms.Room;
 import Rooms.WinningRoom;
 	
@@ -29,7 +30,9 @@ public class Runner {
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
 		building[x][y] = new WinningRoom(x, y);
-		 
+		int c = (int)(Math.random()*building.length);
+		int v = (int)(Math.random()*building.length);
+		building[c][v] = new NewRoom(c,v);
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
